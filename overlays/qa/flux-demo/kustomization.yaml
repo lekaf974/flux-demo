@@ -4,5 +4,4 @@ resources:
 - namespace.yaml
 configMapGenerator:
 - name: flux-demo-cm
-  files:
-  - config.properties
+  env: config.properties
