@@ -1,4 +1,6 @@
-namespace: qa
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: test-flux-demo-qa
 resources:
 - ../../../base/flux-demo
 - namespace.yaml
