@@ -13,9 +13,18 @@ spec:
       labels:
         app: flux-demo
     spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: node-role.kubernetes.io/master
+                operator: NotIn
+                values:
+                - "true"
       containers:
       - name: flux-demo
-        image: lekaf974/flux-demo:v1
+        image: lekaf974/flux-demo:v2
         resources:
           limits:
             memory: "128Mi"
