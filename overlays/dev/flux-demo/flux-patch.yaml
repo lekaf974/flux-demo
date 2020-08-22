@@ -3,3 +3,13 @@ kind: Deployment
 metadata:
   name: flux-demo
   namespace: test-flux-demo-dev
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: flux-demo
+  template: 
+    spec:
+      containers:
+        - name: flux-demo
+        - image: lekaf974/flux-demo:v2
