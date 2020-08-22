@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+  labels:
+    app: flux-demo
+spec:
+  selector:
+    matchLabels:
+      app: flux-demo
+  template:
+    metadata:
+      labels:
+        app: flux-demo
+    spec:
+      containers:
+      - name: hello
+        image: lekaf974/flux-demo:v1
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080
+        env:
+        # Define the environment variable
+        - name: ENVIRONMENT
+          valueFrom:
+            configMapKeyRef:
+              name: flux-demo-cm
+              key: ENVIRONMENT
