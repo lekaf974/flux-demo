@@ -1,8 +1,12 @@
-namespace: test-flux-demo-prod
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: test-flux-demo-dev
 resources:
 - ../../../base/flux-demo
 - namespace.yaml
+patchesStrategicMerge:
+- deployment.yaml
 configMapGenerator:
   - name: flux-demo-cm
     literals:
-      - ENVIRONMENT=prod
+      - ENVIRONMENT=dev
