@@ -3,5 +3,5 @@ resources:
 - ../../../base/flux-demo
 - namespace.yaml
 configMapGenerator:
-- name: flux-demo-cm
-  env: config.properties
+  - name: flux-demo-cm
+    env: config.properties
