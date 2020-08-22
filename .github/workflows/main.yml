@@ -39,12 +39,12 @@ jobs:
     - name: curl
       uses: wei/curl@master
       with:
-        args: http://${{ secrets.IP_ADDRESS }}:{{ DEV_PORT }}
+        args: http://${{ secrets.IP_ADDRESS }}:${{ secrets.DEV_PORT }}
     - name: curl
       uses: wei/curl@master
       with:
-        args: http://${{ secrets.IP_ADDRESS }}:{{ QA_PORT }}
+        args: http://${{ secrets.IP_ADDRESS }}:${{ secrets.QA_PORT }}
     - name: curl
       uses: wei/curl@master
       with:
-        args: http://${{ secrets.IP_ADDRESS }}:{{ PROD_PORT }}
+        args: http://${{ secrets.IP_ADDRESS }}:${{ secrets.PROD_PORT }}
