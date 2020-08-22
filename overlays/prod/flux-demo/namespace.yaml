@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: configMapGenerator:
+- name: flux-demo-cm
+  files:
+  - config.propertiesprod

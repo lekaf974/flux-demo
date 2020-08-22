@@ -1,0 +1,8 @@
+namespace: qa
+resources:
+- ../../../base/flux-demo
+- namespace.yaml
+configMapGenerator:
+- name: flux-demo-cm
+  files:
+  - config.properties
