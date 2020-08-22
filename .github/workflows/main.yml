@@ -32,3 +32,19 @@ jobs:
       env:
         FLUX_FORWARD_NAMESPACE: flux-demo
       run: fluxctl sync
+  test:
+    runs-on: ubuntu-latest
+    needs: fluxctl
+    steps:
+    - name: curl
+      uses: wei/curl@master
+      with:
+        args: http://${{ secrets.IP_ADDRESS }}:{{ DEV_PORT }}
+    - name: curl
+      uses: wei/curl@master
+      with:
+        args: http://${{ secrets.IP_ADDRESS }}:{{ QA_PORT }}
+    - name: curl
+      uses: wei/curl@master
+      with:
+        args: http://${{ secrets.IP_ADDRESS }}:{{ PROD_PORT }}
