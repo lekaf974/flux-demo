@@ -11,5 +11,5 @@ spec:
   template: 
     spec:
       containers:
-        - name: flux-demo
-        - image: lekaf974/flux-demo:v2
+      - name: flux-demo
+        image: lekaf974/flux-demo:v2
