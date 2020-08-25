@@ -2,8 +2,8 @@ namespace: test-flux-demo-prod
 resources:
 - ../../../base/flux-demo
 - namespace.yaml
-patchesStrategicMerge:
-- deployment.yaml
+# patchesStrategicMerge:
+# - deployment.yaml
 configMapGenerator:
   - name: flux-demo-cm
     literals:
