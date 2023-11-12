@@ -24,7 +24,7 @@ spec:
                 - "true"
       containers:
       - name: flux-demo
-        image: lekaf974/flux-demo:v3
+        image: localhost:5000/flux-demo:v3
         resources:
           limits:
             memory: "128Mi"
